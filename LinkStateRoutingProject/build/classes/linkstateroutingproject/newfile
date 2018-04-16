@@ -1,0 +1,58 @@
+Connect_tab_1
+printf("\nEnter source router\n");
+		scanf("%d",&src);
+		printf("ROUTER\t\t\tINTERFACE\n");
+		for(a=1;a<=count;a++)
+           {
+               printf("R%d",a);
+			   if(src==in[src][a]&&src==a)
+				   printf("\t\t\t0\n");
+			   else if(src==in[src][a])
+				   printf("\t\t\tR%d\n",a);
+			   else
+			   printf("\t\t\tR%d\n",in[src][a]);
+           }
+		break;
+
+
+tab2
+for (int i = 0; i < random; i++) {
+  				txtPrintSrcRouter.setText("\n" + txtPrintSrcRouter.getText().toString() + "\n" + "R" + (i + 1) + "        	     " + matrix[Integer.parseInt(sourceNode) - 1][i]);
+  			}
+  			
+  			for (int i = 0; i < random; i++) {
+  				for (int j = 0; j < random; j++) {
+  					if (matrix[i][j] == -1) {
+  						matrix[i][j] = 500; // 500 is infinite distance
+  					}
+  				}
+  			}
+  					distance = matrix[Integer.parseInt(sourceNode) - 1];
+  					visited[Integer.parseInt(sourceNode) - 1] = 1; 
+  					distance[Integer.parseInt(sourceNode) - 1] = 0; // Source to Source considered as zero 
+  			
+  					for (int counter = 0; counter < random; counter++) {
+  							min = 100;
+  							for (int i = 0; i < random; i++) {
+  								if (min > distance[i] && visited[i] != 1) {
+  									min = distance[i];
+  									nextNode = i;
+  								} else {
+  								}
+  							}
+  							
+  				visited[nextNode] = 1;
+  				for (int i = 0; i < random; i++) {
+  					if (visited[i] != 1) {
+  						if (min + matrix[nextNode][i] < distance[i]) {
+  							distance[i] = min + matrix[nextNode][i];
+  							preDetermined[i] = nextNode;
+ 					}
+  				}
+  			}
+  		}
+  	}
+  });
+      
+     
+tab3
